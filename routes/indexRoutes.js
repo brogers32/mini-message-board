@@ -13,15 +13,20 @@ const messages = [
     }
 ];
 
+const links = [
+    { href: "/", text: "Message Board"},
+    { href: "/new", text: "New Message"}
+];
+
 const indexRouter = express.Router();
 const messageRouter = express.Router();
 
 indexRouter.get("/", (req, res) => {
-    res.render("index", {messages: messages});
+    res.render("index", {messages: messages, links: links});
 });
 
 messageRouter.get("/", (req, res) => {
-    res.render("form");
+    res.render("form", {links: links});
 });
 
 messageRouter.post("/", (req, res) => {
