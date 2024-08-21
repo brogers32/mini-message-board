@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Mini Message Board</title>
+</head>
+<body>
+    <h1>Mini Message Board</h1>
+    <table>
+        <tr>
+            <th>User</th>
+            <th>Message</th>
+            <th>Date</th>
+        </tr>
+        <% messages.forEach(message => { %>
+            <tr>
+                <td><%= message.text %></td>
+                <td><%= message.user %></td>
+                <td><%= message.added %></td>
+            </tr>
+        <% }) %>
+    </table>
+</body>
+</html>
